@@ -45,7 +45,23 @@ console.log(alphabtizeInOrder('webmaster'));
 
 // Question 5 : return the first index of each word to be uppercase
 
-const capitalize = () => {
+const capitalize = (sentence) => {
+  let newSentence = [];
 
+  sentence.split(' ').forEach((word) => {
+    newSentence.push(word.charAt(0).toUpperCase() + word.slice(1));
+  });
+  return newSentence.join(' ');
+};
+console.log(capitalize('the quick brown fox'));
+
+function capital(sentence) {
+  let word = sentence.split(' ');
+  let realSentence = [];
+  for (let letter of word) {
+    letter = letter[0].toUpperCase() + letter.slice(1);
+    realSentence.push(letter);
+  }
+  return realSentence.join(' ');
 }
-console.log(capitalize('the quick brown fox'))
+console.log(capital('the quick brown fox'));
