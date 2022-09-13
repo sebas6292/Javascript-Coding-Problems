@@ -11,7 +11,7 @@ const reverseNum = (num) => {
   let revNum = num.toString().split('').reverse().join('');
   return revNum;
 };
-console.log(reverseNum(123456));
+// console.log(reverseNum(123456));
 
 // Question 2 : is it a palindrome or not(recieves a boolean)
 
@@ -19,7 +19,7 @@ const isPalindrome = (string) => {
   let reverseString = string.split('').reverse().join('');
   return string === reverseString;
 };
-console.log(isPalindrome('racecar'));
+// console.log(isPalindrome('racecar'));
 
 // Question 3 : generate all possible combinations of a string; (ex. string = 'dog' .... answer = 'd', 'do', 'dog', 'o', 'og', 'g' )
 
@@ -34,14 +34,14 @@ const stringCombinations = (str) => {
 
   return combos;
 };
-console.log(stringCombinations('dog'));
+// console.log(stringCombinations('dog'));
 
 // Question 4 : return a string in alphabetical order
 
 const alphabtizeInOrder = (string) => {
   return string.split('').sort().join('');
 };
-console.log(alphabtizeInOrder('webmaster'));
+// console.log(alphabtizeInOrder('webmaster'));
 
 // Question 5 : return the first index of each word to be uppercase
 
@@ -53,7 +53,7 @@ const capitalize = (sentence) => {
   });
   return newSentence.join(' ');
 };
-console.log(capitalize('the quick brown fox'));
+// console.log(capitalize('the quick brown fox'));
 
 function capital(sentence) {
   let word = sentence.split(' ');
@@ -64,4 +64,78 @@ function capital(sentence) {
   }
   return realSentence.join(' ');
 }
-console.log(capital('the quick brown fox'));
+// console.log(capital('another sentence that works with this function'));
+
+// Question 6 : find the longest word in a string
+
+const longestWord = (sentence) => {
+  let words = sentence.split(' ');
+  let longWord = '';
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longWord.length) {
+      longWord = words[i];
+    }
+  }
+  return longWord;
+};
+// console.log(longestWord('Web Development Tutorial'));
+
+function longWord(sentence) {
+  let words = sentence.split(' ');
+  let longestWord = '';
+  words.forEach((word) => {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  });
+  return longestWord;
+}
+// console.log(longWord('Web Development Tutorial'));
+
+// Question 7 : count all the vowels in a sentence
+
+const vowelCount = (sentence) => {
+  let vowels = 'aeiou';
+  let count = 0;
+
+  let letters = sentence.split('');
+  letters.forEach((letter) => {
+    if (vowels.includes(letter)) {
+      count++;
+    }
+  });
+  return count;
+};
+// console.log(vowelCount('How many vowels are in this sentence'));
+
+function countVowels(sentence) {
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let letters = sentence.split('');
+  let count = 0;
+
+  for (let i of letters) {
+    if (vowels.includes(i)) {
+      count = count + 1;
+      // count += 1;
+      // count++
+    }
+  }
+  return count;
+}
+// console.log(countVowels('How many vowels are in this sentence'));
+
+// Question 8 : check if the number is a prime (boolean)
+// 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29.
+const isPrime = (num) => {
+ if(num <= 1) {
+   return false;
+ }
+ for (let i = 2; i < num; i++) {
+   if (num % i === 0) {
+     return false;
+   }
+ }
+ return true;
+};
+console.log(isPrime(15));
+
