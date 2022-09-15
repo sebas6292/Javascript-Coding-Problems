@@ -127,15 +127,74 @@ function countVowels(sentence) {
 // Question 8 : check if the number is a prime (boolean)
 // 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29.
 const isPrime = (num) => {
- if(num <= 1) {
-   return false;
- }
- for (let i = 2; i < num; i++) {
-   if (num % i === 0) {
-     return false;
-   }
- }
- return true;
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
 };
-console.log(isPrime(15));
+// console.log(isPrime(15));
 
+// Question 9 : accepts an argument and returns a type(boolean, num, string, function, object, undefined)
+
+const checkType = (type) => {
+  return typeof type;
+};
+
+// console.log(checkType({}));
+
+// Question 10 : returns the n rows by n columns identity matrix
+const rows = (num) => {
+  let columns = [];
+  for (let i = 0; i < num; i++) {
+    columns[i] = [];
+    for (let j = 0; j < num; j++) {
+      columns[i][j] = [];
+    }
+  }
+  return columns;
+};
+// console.log(rows(1));
+
+// Question 11 : takes an array of numbers stored and find the second lowest and second greatest numbers, respectively;use the sort() method(w3schools)
+
+const second_lowest_greatest = (array) => {
+  let sorted = array.sort((a, b) => a - b);
+
+  return [sorted[1], sorted[sorted.length - 1]];
+};
+// console.log(second_lowest_greatest([10, 2, 13, 44, 25]));
+
+// Question 12 : find the perfect number (6) = factors of 6 are 1, 2, 3, 6. and is easily divisible by 2. = 1 + 2 + 3 + 6 = 12 / 2 = 6
+
+const perfectNum = (num) => {
+  let factorsNum = 0;
+
+  for (let i = 0; i <= num; i++) {
+    if (num % i === 0) {
+      factorsNum += i / 2;
+    }
+  }
+
+  return factorsNum;
+};
+// console.log(perfectNum(6));
+
+function isPerfectNum(num) {
+  let factors = [];
+  for (let i = 0; i < num; i++) {
+    if (num % i === 0) {
+      factors.push(i)
+    }
+  }
+    if (factors.reduce((sum, a) => sum + a, 0) === num) {
+      return true
+    } else {
+      return false
+    }
+}
+console.log(isPerfectNum(6))
