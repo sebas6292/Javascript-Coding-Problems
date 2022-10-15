@@ -11,6 +11,7 @@ const reverseNum = (num) => {
   let revNum = num.toString().split('').reverse().join('');
   return revNum;
 };
+
 // console.log(reverseNum(123456));
 
 // Question 2 : is it a palindrome or not(recieves a boolean)
@@ -19,6 +20,7 @@ const isPalindrome = (string) => {
   let reverseString = string.split('').reverse().join('');
   return string === reverseString;
 };
+
 // console.log(isPalindrome('racecar'));
 
 // Question 3 : generate all possible combinations of a string; (ex. string = 'dog' .... answer = 'd', 'do', 'dog', 'o', 'og', 'g' )
@@ -188,13 +190,28 @@ function isPerfectNum(num) {
   let factors = [];
   for (let i = 0; i < num; i++) {
     if (num % i === 0) {
-      factors.push(i)
+      factors.push(i);
     }
   }
-    if (factors.reduce((sum, a) => sum + a, 0) === num) {
-      return true
-    } else {
-      return false
-    }
+  if (factors.reduce((sum, a) => sum + a, 0) === num) {
+    return true;
+  } else {
+    return false;
+  }
 }
-console.log(isPerfectNum(6))
+// console.log(isPerfectNum(6))
+
+// Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+const largestPair = (array) => {
+  let highest = array[0] * array[1];
+  for (let i = 0; i <= array.length; i++) {
+    const product = array[i] * array[i + 1];
+    if (highest < product) {
+      highest = product;
+    }
+  }
+  return highest;
+};
+
+// console.log(largestPair([1, 2, 3, 4, 5, 6]));
