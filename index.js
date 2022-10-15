@@ -215,3 +215,16 @@ const largestPair = (array) => {
 };
 
 // console.log(largestPair([1, 2, 3, 4, 5, 6]));
+
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+const twoSumPair = (nums, target) => {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; i++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+};
+console.log(twoSumPair([1, 2, 3, 4, 5, 6], 12));
