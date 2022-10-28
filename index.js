@@ -12,7 +12,11 @@ const reverseNum = (num) => {
   return revNum;
 };
 
-// console.log(reverseNum(123456));
+// const reverseNum = (num) => {
+// return num.toString().split('').reverse().join('')
+// }
+
+console.log(reverseNum(123456));
 
 // Question 2 : is it a palindrome or not(recieves a boolean)
 
@@ -21,7 +25,16 @@ const isPalindrome = (string) => {
   return string === reverseString;
 };
 
-// console.log(isPalindrome('racecar'));
+// const isPalindrome = (string) => {
+//   let revString = string.split('').reverse().join('');
+//   if (string === revString) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+console.log(isPalindrome('racecar'));
 
 // Question 3 : generate all possible combinations of a string; (ex. string = 'dog' .... answer = 'd', 'do', 'dog', 'o', 'og', 'g' )
 
@@ -263,4 +276,4 @@ const phraseIsPalindrome = (str) => {
   return true ? string === string2 : false;
 };
 
-console.log(phraseIsPalindrome('A man a plan a canal Panama'));
+// console.log(phraseIsPalindrome('A man a plan a canal Panama'));
