@@ -237,3 +237,30 @@ const largestPair = (array) => {
 //   }
 // };
 // console.log(twoSum([1, 2, 3, 4, 5, 6], 12));
+
+//return the length of the last word
+
+const lengthOfLastWord = (str) => {
+  let words = str.split(' ');
+  let lastWord;
+  for (let i = 0; i < words.length; i++) {
+    if (words[i]) {
+      lastWord = words[i];
+    }
+  }
+  return lastWord.length;
+};
+// console.log(lengthOfLastWord('Hello Worlds'));
+
+// A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+// Given a string s, return true if it is a palindrome, or false otherwise.
+
+const phraseIsPalindrome = (str) => {
+  let string = str.split(' ').join('').toLowerCase();
+  let string2 = string.split('').reverse().join('');
+
+  return true ? string === string2 : false;
+};
+
+console.log(phraseIsPalindrome('A man a plan a canal Panama'));
