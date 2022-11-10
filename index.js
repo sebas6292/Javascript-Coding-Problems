@@ -288,13 +288,13 @@ const reverseArray = (array) => {
   }
   return reversed;
 }
-const reverseArray = (array) => {
-  let reversed = [];
+// const reverseArray = (array) => {
+//   let reversed = [];
 
-  for ( let i = array.length - 1; i >= 0; i--) {
-    reversed.push(array[i])
-  }
-  return reversed;
-}
+//   for ( let i = array.length - 1; i >= 0; i--) {
+//     reversed.push(array[i])
+//   }
+//   return reversed;
+// }
 // const sentence = ['sense', 'make', 'will', 'This']
 // console.log(reverseArray(sentence))
