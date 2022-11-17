@@ -278,16 +278,16 @@ const phraseIsPalindrome = (str) => {
 
 // console.log(phraseIsPalindrome('A man a plan a canal Panama'));
 
-// reverse an array 
+// reverse an array
 
 const reverseArray = (array) => {
   let reversed = [];
 
   for (let i = 0; i < array.length; i++) {
-    reversed.unshift(array[i])
+    reversed.unshift(array[i]);
   }
   return reversed;
-}
+};
 // const reverseArray = (array) => {
 //   let reversed = [];
 
@@ -298,3 +298,16 @@ const reverseArray = (array) => {
 // }
 // const sentence = ['sense', 'make', 'will', 'This']
 // console.log(reverseArray(sentence))
+
+// count the reoccurence of an item
+const array = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4];
+
+// const occurrences = array.reduce(function (acc, curr) {
+//   return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
+// }, {});
+
+const occurences = array.reduce((acc, curr) => {
+  return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
+}, {});
+
+// console.log(occurences);
